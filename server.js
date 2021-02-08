@@ -1,5 +1,6 @@
 const express = require('express');
 const knex = require('knex');
+const path = require('path');
 
 // CONFIGURE KNEX TO ACCESS BD
 
@@ -12,6 +13,12 @@ app.listen(port, () => {
 app.use(express.json());
 
 // SERVE FRONTEND
+app.use(express.static(path.resolve(__dirname, "..", "dist")));
+
 app.use(express.static('front'));
 
 // test via node server.js
+
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "..", "dist", "index.html"));
+  });

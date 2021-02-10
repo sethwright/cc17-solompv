@@ -1,6 +1,7 @@
 const express = require("express");
 // const knex = require("knex");
 const path = require("path");
+const data = require("./mock/data.json");
 
 // CONFIGURE KNEX TO ACCESS BD
 
@@ -11,6 +12,14 @@ app.listen(port, () => {
   console.log("Live on port: " + port);
 });
 app.use(express.json());
+
+
+//manage JSON data and create API here
+app.use(require("body-parser").json()); // parses JSON for server
+
+app.get("/api/locations", (req, res) => {
+  res.json(data);
+})
 
 // SERVE FRONTEND
 app.use(express.static(path.resolve(__dirname, "dist")));

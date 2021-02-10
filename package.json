@@ -21,12 +21,14 @@
   },
   "homepage": "https://github.com/sethwright/cc17-solompv#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "eslint-plugin-prettier": "^3.1.4",
     "express": "^4.17.1",
     "knex": "^0.21.17",
     "pg": "^8.5.1",
     "vue": "^2.6.12",
+    "vue-clickaway": "^2.2.2",
     "vue2-google-maps": "^0.10.7"
   },
   "devDependencies": {

@@ -7,19 +7,31 @@
     <div class="flex justify-center items-center flex-1">
       <Drop>
         <template slot="toggle">
-          <button
-            class="relative flex items-center focus:outline-none pl-5 pr-3 py-2 rounded-lg bg-gray-300 text-gray-800 font-semibold"
-          >
+          <button>
             Cities
           </button>
         <!-- why is template here? -->
-        </template> 
-        <DropContent v-bind:key=city v-for="city of cities">
+        </template>
+        <div v-bind:key=city v-for="city of cities">
+          <p
+            v-on:click="setCityFilter(city)"
+          >{{city}}</p>
+        </div>
+      </Drop>
+      <Drop>
+        <template slot="toggle">
+          <button>
+            Free Only
+          </button>
+        <!-- why is template here? -->
+        </template>
+        <DropContent v-bind:key=cost v-for="cost of price">
           <DropItem
-          v-on:click="setFilter(city)"
-          >{{city}}</DropItem>
+          v-on:click="setFreeFilter(cost)"
+          >{{cost}}</DropItem>
         </DropContent>
       </Drop>
+      <button>Clear Filter</button>
     </div>
     <div>
     <!-- list of filtered options -->
@@ -47,20 +59,30 @@ export default {
       const fetchedLocations = await axios.get("/api/locations")
       this.locations = fetchedLocations.data;
     },
-    setFilter (criteria) {
-      console.log('🔥')
+    setCityFilter (criteria) {
+      console.log('setCityFilter has been called 🔥')
       this.viewableParking = this.locations.filter((each) => each.city === criteria);
+    },
+    setFreeFilter () {
+      // TODO
+    },
+    resetFilter () {
+      this.viewableParking = this.locations;
     }
   },
   data: () => ({
     title: "🚵🏼‍♂️  bike'r",
     locations: [],
-    cities: ["Shibuya-ku", "Chiyoda-ku", "Chuo-ku"],
-    viewableParking: []
+    cities: [],
+    price: false,
+    viewableParking: [],
+    viewableFilter: 'none'
   }),
   async created() {
     await this.getLocations();
-    this.viewableParking = this.locations;    
+    this.viewableParking = this.locations;
+    this.cities = this.locations.map((eachLocation) => { return eachLocation.city });
+    console.log(this.cities);
   }
 };
 </script>

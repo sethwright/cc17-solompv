@@ -2,7 +2,7 @@
   <div id="mapContainer">
     <GmapMap
       :zoom="13"
-      :center="{ lat: 35.685, lng: 139.76 }"
+      :center="{ lat: 35.69, lng: 139.76 }"
       map-type-id="roadmap"
       style="width: 100%; height: 50vh"
     >
@@ -10,7 +10,6 @@
         v-for="location in locations"
         :key="location.key"
         :position="location.position"
-        :animation="location.defaultAnimation"
         @rightclick="markerRightClicked"
       />
     </GmapMap>

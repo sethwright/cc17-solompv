@@ -4,7 +4,8 @@ import App from "./App.vue";
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: "AIzaSyDJ3sPnmTBMN1DZGJBX9gxuNg-O9mgHOAo",
+    key:
+    /* Your Maps Javascript API key here: */"",
     libraries: "geometry,drawing,places"
   }
 });

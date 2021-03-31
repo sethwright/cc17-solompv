@@ -1,40 +1,58 @@
-##### First solo, MPV full stack app; created while at Code Chrysalis.
-<br><br>
+##### bike'r is a '1-man', work-in-progress 'MVP' concept app started during a 3-day sprint at Code Chysalis Immersive Bootcamp. ReadMe will be updated to reflect changes gradually.
+<br>
 
 # bike'r
-## Requirements
 
-- Be in a public repository on your GitHub, shared with the instructors.
-- A list of stories in your GitHub issues [Recommended]
-- A README with clear set up instructions, a summary detailing what the app is, resources, and any future plans.
-- Unsure of what goes into a good README? Read about it here.
-- Pre-written scripts in your package.json that will make it easy for a new developer to set up your application
-- Must have a UI (Vue, React, standard JavaScript, etc.)
-3 minute presentation of your project
-- Marketing pitch for your application.
-- What challenges did you face?
-- What did you learn?
-- What technologies did you use? Why?
-- A demo of your project
+Tokyo has great streets for biking. But unfortunately scarce and expensive parking.
 
-## Advanced Requirements
-- Use CircleCI, TravisCI or another continuous integration system
-- Use SASS, SCSS, Less or another css preprocessor to manage your CSS styles
-- Deployed to AWS or GCP
-- Using a new technology — talk about it in your slides!
+bike'r is a mobile-friendly tool that overlays crowdsourced bike parking on Google Maps. Whether legit parking, or just unregulated space where you won't get towed; visit the app here and transform your commute.
 
+bike'r will be deployed on Heroku with URL located here.
 
-Idea
-"An app for finding bike parking"
-Commitments
-• User can see a map of nearby bike parking
-• User can filter parking by city or price
-• User can see the price of the park
-• User can submit a new location for review - LAST
-Tech
-• Knex
-• Express
-• PSQL
-• VUE
-• VUEX
-• VUETIFY - LAST
+## Progress:
+✅ User can see a map of nearby bike parking.
+
+👨🏼‍💻 User can filter parking by city or price
+
+😅 User can see the price of the park
+
+😅 User can submit a new location for review
+
+<img src="./bikershot.png">
+
+## Tech Stack:
+- Front End
+  - Vue + Vuex
+  - Vuetify (pending)
+- Back End
+  - Node/Express
+  - Knex + PostgreSQL (pending)
+- Deployment
+  - Heroku
+
+## Want to run your own copy?
+
+1. First clone the repository to your local machine
+```
+git clone 🖐 CLONE URL HERE
+```
+
+2. Install all dependencies
+```
+npm install
+```
+
+3. This app requires developer keys from Google Maps API, please refer to the [official documentation](https://developers.google.com/maps/documentation/javascript/cloud-setup) for more info. Once you have your keys, it can be placed in src/main.js where indicated.
+
+Run the location server (currently spoofed with no DB):
+```
+npm start
+```
+(Or run server in development mode):
+```
+npm run dev
+```
+After the server is running, run the client:
+```
+npm run client
+```

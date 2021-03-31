@@ -1,4 +1,6 @@
 const express = require("express");
+require("dotenv").config();
+
 // const knex = require("knex");
 const path = require("path");
 const data = require("./mock/data.json");
@@ -24,6 +26,8 @@ app.get("/api/locations", (req, res) => {
 // SERVE FRONTEND
 app.use(express.static(path.resolve(__dirname, "dist")));
 app.use(express.static("public"));
+
+// THIS ALLOWS  ??
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "dist", "index.html"));
 });

@@ -1,4 +1,5 @@
-##### bike'r is a '1-man', work-in-progress 'MVP' concept app started during a 3-day sprint at Code Chysalis Immersive Bootcamp. ReadMe will be updated to reflect changes gradually.
+<b>☝🏻 bike'r is a 1-man, work-in-progress 'MVP' concept started during a 3-day sprint at Code Chysalis Immersive Bootcamp. ReadMe will be updated to reflect changes gradually.
+</b>
 <br>
 
 # bike'r

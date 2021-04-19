@@ -31,11 +31,11 @@ bike'r will be deployed on Heroku with URL located here.
 - Deployment
   - Heroku
 
-## Want to run your own copy?
+## Want to give it a try?
 
 1. First clone the repository to your local machine
 ```
-git clone 🖐 CLONE URL HERE
+git clone https://github.com/sethwright/cc17-solompv.git
 ```
 
 2. Install all dependencies
@@ -43,7 +43,9 @@ git clone 🖐 CLONE URL HERE
 npm install
 ```
 
-3. This app requires developer keys from Google Maps API, please refer to the [official documentation](https://developers.google.com/maps/documentation/javascript/cloud-setup) for more info. Once you have your keys, it can be placed in src/main.js where indicated.
+3. This app requires developer keys from Google Maps API, please refer to the [official documentation](https://developers.google.com/maps/documentation/javascript/cloud-setup) for more info.
+
+4. Once you have your keys, it can be placed in src/main.js where indicated.
 
 Run the location server (currently spoofed with no DB):
 ```
